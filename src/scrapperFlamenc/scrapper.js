@@ -32,4 +32,5 @@ const scrapper = async (url) => {
   return arrayImgs
 }
 
+
 module.exports = { scrapper }
