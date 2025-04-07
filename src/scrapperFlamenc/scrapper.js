@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer')
+/*const puppeteer = require('puppeteer')
 const fs = require ("fs")
 
 const scrapper = async (url) => {
@@ -11,10 +11,10 @@ const scrapper = async (url) => {
   const divsImg = await page.$$('a.product_img_link')
   console.log(divsImg.length)
 
-  /*for (let i=0; i < 10; i++){ 
+  for (let i=0; i < 10; i++){ 
     const div = divsImg[i];
     const img = await div.$eval("img", (e) => e.src);
-    console.log(img);*/
+    console.log(img);
     
   for (let i = 0; i < Math.min(10,divsImg.length); i++) {
     const div = divsImg[i]
@@ -32,5 +32,4 @@ const scrapper = async (url) => {
   return arrayImgs
 }
 
-
-module.exports = { scrapper }
+module.exports = { scrapper }*/

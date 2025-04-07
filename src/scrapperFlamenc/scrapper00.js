@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer");
+/*const puppeteer = require("puppeteer");
 const fs = require("fs");
 
 const vestidosArray = [];
@@ -59,4 +59,4 @@ const write = (vestidosArray) => {
   });
 };
 
-module.exports = { scrapper };
+module.exports = { scrapper };*/

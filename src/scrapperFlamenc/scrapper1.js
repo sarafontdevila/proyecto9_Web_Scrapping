@@ -13,21 +13,16 @@ const scrapper = async (url) => {
   while (hasNextPage) {
     console.log(`Procesando página ${pageCounter}...`);
 
-    // Seleccionar todos los contenedores de productos en la página actual
     const productContainers = await page.$$('.product-container');
     console.log(`Encontrados ${productContainers.length} productos en esta página`);
 
-    // Extraer información de cada producto
+  
     for (let i = 0; i < productContainers.length; i++) {
       const container = productContainers[i];
       try {
-        // Extraer la imagen
+       
         const img = await container.$eval('.product-image-container img', (e) => e.src);
-        
-        // Extraer el nombre del producto
         const name = await container.$eval('.product-name', (e) => e.innerText.trim());
-        
-        // Extraer el precio
         const price = await container.$eval('span[itemprop="price"]', (e) => e.innerText.trim());
         
         products.push({
@@ -64,9 +59,8 @@ const scrapper = async (url) => {
     }
   }
 
-  // Guardar los datos en un archivo JSON
-  fs.writeFileSync('productos_completo.json', JSON.stringify(products, null, 2));
-  console.log(`Proceso completado. Se han guardado ${products.length} productos en productos_completo.json`);
+  fs.writeFileSync('productos.json', JSON.stringify(products, null, 2));
+  console.log(`Proceso completado. Se han guardado ${products.length} productos en el archivo de productos.json`);
 
   await browser.close();
   return products;

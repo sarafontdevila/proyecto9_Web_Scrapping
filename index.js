@@ -1,4 +1,4 @@
-const { scrapper } = require('./src/scrapperFlamenc/scrapper')
+const { scrapper } = require('./src/scrapperFlamenc/scrapper1')
 const express = require ("express")
 const cors = require('cors')
 
