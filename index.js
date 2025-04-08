@@ -1,4 +1,4 @@
-const { scrapper } = require('./src/scrapperFlamenc/scrapper1')
+const { scrapper } = require('./src/scrapperFlamenc/scrapper')
 const express = require ("express")
 const cors = require('cors')
 
@@ -21,6 +21,5 @@ app.listen(3000, () => {
   console.log("Server running on http://localhost:3000/");
 
 })
-
 
 scrapper('https://trajesflamencos.eu/41-vestidos-adulto')
